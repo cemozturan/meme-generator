@@ -1,20 +1,44 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../styles/index.css';
+
+import { Form, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
 import MemeItem from './meme-item';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      memeLimit: 10
+      memeLimit: 10,
+      text0: '',
+      text1: ''
+      // We choose text0 and text1 instead of topText and bottomText because
+      // the API expects text0 and text1 parameters and// we want to match the API behaviour.
     };
   }
 
   render() {
     return (
       <div>
-        <h2>Meme Generator</h2>
+        <h2><u>Meme Generator</u></h2>
+        <h4><i>Write Some Text</i></h4>
+        <Form inline>
+          <FormGroup>
+            <ControlLabel>Top</ControlLabel>
+            {' '}
+            <FormControl
+              type="text"
+              onChange={event => this.setState({ text0: event.target.value })}></FormControl>
+          </FormGroup>
+          {' '}
+          <FormGroup>
+            <ControlLabel>Bottom</ControlLabel>
+            {' '}
+            <FormControl
+              type="text"
+              onChange={event => this.setState({ text1: event.target.value })}></FormControl>
+          </FormGroup>
+        </Form>
         {
           this.props.memes.slice(0, this.state.memeLimit).map((meme, index) => {
             return (
