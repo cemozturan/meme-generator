@@ -1,5 +1,4 @@
 export const RECEIVE_MEMES = 'RECEIVE_MEMES';
-export const RECEIVE_MEMES = 'RECEIVE_MEMES';
 
 function receiveMemes(json) {
   const { memes } = json.data;
