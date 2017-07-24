@@ -39,4 +39,28 @@ body {
   position: absolute;
   bottom: 0;
   border-radius: 5px;
+  animation-name: fade-in;
+  animation-duration: 1s;
+  font-size: 14px;
+}
+
+.no-text {
+  display: none;
+}
+
+.darken-image {
+  background-color: gray;
+  filter: brightness(10%);
+  animation-name: darken;
+  animation-duration: 1s;
+}
+
+@keyframes darken {
+  from {filter: brightness(90%)};
+  to {filter: brightness(10%)};
+}
+
+@keyframes fade-in {
+  from {opacity: 0};
+  to {opacity: 1000};
 }
