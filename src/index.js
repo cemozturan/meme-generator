@@ -14,7 +14,7 @@ Without using applyMiddleware(thunk) during the store creation, we were getting 
 
 VM239 bundle.js:35465 Uncaught Error: Actions must be plain objects. Use custom middleware for async actions.
 
-The reason was that the "fetchMemes()" call is returning an async function, not a plain object. The solution is to
+The reason was that the "fetchMemes()" call is returning a function, not a plain object. The solution is to
 use the "thunk" as a middleware.
 */
 
